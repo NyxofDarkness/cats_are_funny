@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'cat_posts',
+    'rest_framework',
 
     # Third-party
     'allauth',
@@ -33,6 +35,7 @@ INSTALLED_APPS = [
     # Local
     'accounts',
     'pages',
+    'images',
 ]
 
 # MIDDLEWARE
@@ -171,3 +174,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES' : ['rest_framework.permissions.AllowAny']
+}
